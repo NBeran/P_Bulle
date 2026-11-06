@@ -1,36 +1,61 @@
 // @ts-check
 
 /**
- * Convertit une valeur en nombre.
+ *
+ * @param {*} value
+ * @returns
  */
 export function convertCode(value) {
-  // TODO
+  return parseInt(value);
 }
 
 /**
- * Compare deux valeurs avec l'égalité souple.
+ *
+ * @param {*} value1
+ * @param {*} value2
+ * @returns
  */
 export function sameCodeLoose(value1, value2) {
-  // TODO
+  if (value1 == value2) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
- * Compare deux valeurs avec l'égalité stricte.
+ *
+ * @param {*} value1
+ * @param {*} value2
  */
 export function sameCodeStrict(value1, value2) {
-  // TODO
+  if (value1 === value2) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
- * Indique si un code est pair.
+ *
+ * @param {*} code
+ * @returns
  */
 export function isEvenCode(code) {
-  // TODO
+  if (code % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
  * Indique si la conversion de la valeur produit NaN.
  */
 export function isInvalidCode(value) {
-  // TODO
+  if (isNaN(value)) {
+    return true;
+  } else {
+    return false;
+  }
 }
