@@ -6,7 +6,7 @@
  * @returns
  */
 export function convertCode(value) {
-  return parseInt(value);
+  return Number(parseInt(value));
 }
 
 /**

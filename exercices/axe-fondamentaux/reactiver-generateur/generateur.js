@@ -2,42 +2,46 @@
 
 /**
  * Calcule la quantité d'énergie manquante.
- *@param {number} maxEnergy
- *@param {number} currentEnergy
+ *@param {number} maxEnergy l'énergie maximum
+ *@param {number} currentEnergy l'énegie actuelle
+ * @returns {Number} le nombre d'énergie manquante pour arriver au max
  */
 
 export function missingEnergy(maxEnergy, currentEnergy) {
-  return maxEnergy - currentEnergy;
+  return Number(maxEnergy - currentEnergy);
 }
 
 /**
  *
- * @param {*} maxEnergy
- * @param {*} currentEnergy
- * @returns
+ * Calcule le pourcentage d'énergie disponible.
+ * @param {*} maxEnergy l'énergie maximum
+ * @param {*} currentEnergy l'énergie actuelle
+ * @returns {Number} le pourcentage d'énegie qu'il reste
  */
 export function energyPercentage(maxEnergy, currentEnergy) {
-  return (currentEnergy / maxEnergy) * 100;
+  return Number((currentEnergy / maxEnergy) * 100);
+}
+
+/**
+ * Calcule l'énergie disponible après une recharge.
+ * @param {*} currentEnergy l'énergie actuelle
+ * @param {*} recharge l'énergie qui a chargé
+ * @returns {Number} la batterie apres avoir chargé
+ */
+export function energyAfterRecharge(currentEnergy, recharge) {
+  return Number(currentEnergy + recharge);
 }
 
 /**
  *
- * @param {*} currentEnergy
- * @param {*} recharge
- * @returns
- */
-export function energyAfterRecharge(currentEnergy, recharge) {
-  return currentEnergy + recharge;
-}
-
-/**
- * Indique si le générateur possède au moins 500 unités d'énergie.
+ * @param {*} currentEnergy l'énergie actuelle
+ * @returns {boolean} si il y a assez d'énergie ou non
  */
 export function isGeneratorReady(currentEnergy) {
-  if (currentEnergy < 500) {
-    return false;
+  if (currentEnergy <= 500) {
+    return Boolean(false);
   } else {
-    return true;
+    return Boolean(true);
   }
 }
 
@@ -48,5 +52,5 @@ export function isGeneratorReady(currentEnergy) {
  * @returns
  */
 export function generatorStatus(name, currentEnergy) {
-  return name + " possède " + currentEnergy + " unités d'énergie.";
+  return `${name} possède ${currentEnergy} unités d'énergie`;
 }

@@ -1,19 +1,21 @@
 // @ts-check
 
-// TODO : déclarer la constante de conversion entre les km/h et les m/s
+const rapport_kmh_ms = 3.6;
 
 /**
- * Convertit une vitesse de km/h en m/s.
+ *
+ * @param {*} speedKmh
+ * @returns
  */
 export function kmhToMs(speedKmh) {
-  // TODO
+  return Number(speedKmh / rapport_kmh_ms);
 }
 
 /**
  * Calcule l'écart entre une rafale et le vent moyen.
  */
 export function gustGap(gustKmh, averageKmh) {
-  // TODO
+  return Number(gustKmh - averageKmh);
 }
 
 /**
