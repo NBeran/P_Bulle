@@ -2,9 +2,16 @@
 
 /**
  * Valide une quantité d'énergie.
+ * @param {number} energy l'énergie actuelle
+ * @returns {number} l'énergie si elle est positive
  */
+
 export function validateEnergy(energy) {
-  // TODO
+  if (energy < 0) {
+    throw new Error("Énergie invalide");
+  } else {
+    return energy;
+  }
 }
 
 /**
